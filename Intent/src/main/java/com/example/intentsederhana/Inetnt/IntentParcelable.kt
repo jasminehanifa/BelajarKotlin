@@ -1,9 +1,10 @@
-package com.example.intentsederhana
+package com.example.intentsederhana.Inetnt
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
-import org.w3c.dom.Text
+import com.example.intentsederhana.Model.PersonData
+import com.example.intentsederhana.R
 
 class IntentParcelable : AppCompatActivity() {
     private lateinit var tvObj: TextView

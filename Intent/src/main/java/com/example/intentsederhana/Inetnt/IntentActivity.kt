@@ -1,7 +1,8 @@
-package com.example.intentsederhana
+package com.example.intentsederhana.Inetnt
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.intentsederhana.R
 
 class IntentActivity : AppCompatActivity() {
 
