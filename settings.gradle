@@ -1,2 +1,2 @@
-include ':HitungVolume', ':Intent'
+include ':HitungVolume', ':Intent', ':belajarfragment'
 rootProject.name='KotlinHitungVolume'

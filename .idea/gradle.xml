@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/HitungVolume" />
             <option value="$PROJECT_DIR$/Intent" />
+            <option value="$PROJECT_DIR$/belajarfragment" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
