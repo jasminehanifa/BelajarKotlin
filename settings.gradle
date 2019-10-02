@@ -1,2 +1,2 @@
-include ':HitungVolume', ':intentsederhana'
+include ':HitungVolume', ':Intent'
 rootProject.name='KotlinHitungVolume'

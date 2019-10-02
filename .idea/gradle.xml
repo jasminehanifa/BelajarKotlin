@@ -9,7 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/HitungVolume" />
-            <option value="$PROJECT_DIR$/intentsederhana" />
+            <option value="$PROJECT_DIR$/Intent" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
