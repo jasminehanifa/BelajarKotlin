@@ -41,7 +41,7 @@ class MoveForResultActivity : AppCompatActivity(), View.OnClickListener {
                 val resultIntent = Intent()
                 resultIntent.putExtra(EXTRA_SELECTED_VALUE, value)
                 setResult(RESULT_CODE, resultIntent)
-                finish()
+//                finish()
             }
         }
     }

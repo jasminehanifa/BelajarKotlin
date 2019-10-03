@@ -11,6 +11,8 @@
             <option value="$PROJECT_DIR$/HitungVolume" />
             <option value="$PROJECT_DIR$/Intent" />
             <option value="$PROJECT_DIR$/belajarfragment" />
+            <option value="$PROJECT_DIR$/listview" />
+            <option value="$PROJECT_DIR$/recyclerview" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
