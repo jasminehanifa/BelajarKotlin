@@ -11,6 +11,14 @@ import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.item_cardview_hero.view.*
 
 class CardViewHeroAdapter (private val listHero: ArrayList<Hero>) : RecyclerView.Adapter<CardViewHeroAdapter.CardViewHolder>() {
+
+    private var onItemClickCallback : OnItemClickCallback? = null
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback){
+        this.onItemClickCallback = onItemClickCallback
+    }
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_cardview_hero, parent, false)
         return CardViewHolder(view)
@@ -44,10 +52,12 @@ class CardViewHeroAdapter (private val listHero: ArrayList<Hero>) : RecyclerView
                 }
 
                 itemView.setOnClickListener {
-                    Toast.makeText(itemView.context, "Memilih ${hero.name}", Toast.LENGTH_SHORT).show()
+                    onItemClickCallback?.onItemClick(hero)
                 }
             }
         }
     }
+
+
 
 }

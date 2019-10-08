@@ -12,6 +12,11 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_row_hero.view.*
 
 class ListHeroAdapter(private val arraylistHero: ArrayList<Hero>): RecyclerView.Adapter<ListHeroAdapter.ListViewHolder>() {
+    private var onItemClickCallback : OnItemClickCallback? = null
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback){
+        this.onItemClickCallback = onItemClickCallback
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_row_hero, parent, false)
@@ -24,7 +29,7 @@ class ListHeroAdapter(private val arraylistHero: ArrayList<Hero>): RecyclerView.
         holder.bind(arraylistHero[position])
     }
 
-    class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(hero: Hero){
             with(itemView){
                 Glide.with(itemView.context).load(hero.photo)
@@ -33,11 +38,13 @@ class ListHeroAdapter(private val arraylistHero: ArrayList<Hero>): RecyclerView.
                     .override(55, 55)
                     .into(img_item_photo)
 
-//                Picasso.with(itemView.context).load(hero.photo).into(img_item_photo)
-                Log.d("wasd", hero.photo)
-
                 tv_item_name.text = hero.name
                 tv_item_from.text = hero.desc
+
+                itemView.setOnClickListener {
+                    onItemClickCallback?.onItemClick(hero)
+                }
+
             }
         }
 

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
@@ -22,18 +23,6 @@ class MainActivity : AppCompatActivity() {
         list.addAll(getListHero())
         showRecylerList()
 
-    }
-
-    fun gridHero(){
-        rv_heroes.layoutManager = GridLayoutManager(this, 2)
-        val gridHeroAdapter = GridHeroAdapter(list)
-        rv_heroes.adapter = gridHeroAdapter
-    }
-
-    fun cardviewHero(){
-        rv_heroes.layoutManager =LinearLayoutManager(this)
-        val cardViewHeroAdapter = CardViewHeroAdapter(list)
-        rv_heroes.adapter = cardViewHeroAdapter
     }
 
     fun getListHero(): ArrayList<Hero>{
@@ -54,11 +43,46 @@ class MainActivity : AppCompatActivity() {
         return listHero
     }
 
+    fun gridHero(){
+        rv_heroes.layoutManager = GridLayoutManager(this, 2)
+        val gridHeroAdapter = GridHeroAdapter(list)
+        rv_heroes.adapter = gridHeroAdapter
+
+        gridHeroAdapter.setOnItemClickCallback(object : OnItemClickCallback{
+            override fun onItemClick(data: Hero) {
+                selectedHero(data)
+            }
+
+        })
+    }
+
+    fun cardviewHero(){
+        rv_heroes.layoutManager =LinearLayoutManager(this)
+        val cardViewHeroAdapter = CardViewHeroAdapter(list)
+        rv_heroes.adapter = cardViewHeroAdapter
+
+       cardViewHeroAdapter.setOnItemClickCallback(object : OnItemClickCallback{
+           override fun onItemClick(data: Hero) {
+               selectedHero(data)
+           }
+       })
+    }
+
     private fun showRecylerList(){
         rv_heroes.layoutManager = LinearLayoutManager(this)
         val listHeroAdapter = ListHeroAdapter(list)
         rv_heroes.adapter = listHeroAdapter
 
+        listHeroAdapter.setOnItemClickCallback(object : OnItemClickCallback{
+            override fun onItemClick(data: Hero) {
+                selectedHero(data)
+            }
+
+        })
+    }
+
+    private fun selectedHero(hero: Hero){
+        Toast.makeText(this, "Kamu Memilih ${hero.name}", Toast.LENGTH_SHORT).show()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
