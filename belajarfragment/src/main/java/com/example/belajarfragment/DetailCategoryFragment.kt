@@ -28,10 +28,7 @@ class DetailCategoryFragment : Fragment(), View.OnClickListener {
         var EXTRA_DESCRIPTION = "extra_description"
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_detail_category, container, false)
     }

@@ -8,6 +8,7 @@
     <string name="favorite">Favorite</string>
     <string name="share">Share</string>
     <string name="card">Card</string>
+
     <string-array name="data_name">
         <item>Ahmad Dahlan</item>
         <item>Ahmad Yani</item>
@@ -46,4 +47,5 @@
         <item>https://upload.wikimedia.org/wikipedia/commons/c/c3/Supomo_from_President_Website.JPG</item>
         <item>https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/TanMalaka_DariPendjara_ed3.jpg/330px-TanMalaka_DariPendjara_ed3.jpg</item>
     </string-array>
+
 </resources>

@@ -1,2 +1,2 @@
-include ':HitungVolume', ':Intent', ':belajarfragment', ':listview', ':recyclerview'
+include ':HitungVolume', ':Intent', ':belajarfragment', ':listview', ':recyclerview', ':DrawerNavigation', ':bottomnavigation'
 rootProject.name='KotlinHitungVolume'
